@@ -21,13 +21,8 @@
 			<pbcast.GMS print_local_addr="true" join_timeout="3000"
 				view_bundling="true" log_view_warnings="true" stats="true"
 				print_physical_addrs="true" />
-			<UFC max_credits="2M" min_threshold="0.4" />
 			<MFC max_credits="2M" min_threshold="0.4" />
 			<FRAG2 frag_size="60K" />
-			<RSVP />
-			<!--pbcast.STATE / -->
-			<pbcast.STATE_TRANSFER />
-			<!-- pbcast.FLUSH / -->
 		</stack>
 		<stack name="prod">
 			<TCP bind_port="7800" port_range="30" recv_buf_size="20000000"
@@ -58,7 +53,7 @@
 		</stack>
 	</jgroups>
 	<cache-container default-cache="repl-sync">
-		<transport cluster="mycluster" stack="udp" />
+		<transport cluster="mycluster" stack="dns-ping" />
 		<local-cache name="local" />
 		<invalidation-cache name="invalidation" mode="SYNC" />
 		<replicated-cache name="repl-sync" mode="SYNC" />
