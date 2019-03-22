@@ -1,7 +1,7 @@
 <infinispan>
 	<jgroups>
 		<stack name="dns-ping">
-			<TCP />
+			<TCP  bind_port="7600"/>
 			<dns.DNS_PING
 				dns_query="okddnsping-headless.default.svc.cluster.local" />
 			<MERGE3 max_interval="30000" min_interval="10000" />
