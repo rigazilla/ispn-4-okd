@@ -58,7 +58,7 @@
 		</stack>
 	</jgroups>
 	<cache-container default-cache="repl-sync">
-		<transport cluster="mycluster" stack="dns-ping" />
+		<transport cluster="mycluster" stack="udp" />
 		<local-cache name="local" />
 		<invalidation-cache name="invalidation" mode="SYNC" />
 		<replicated-cache name="repl-sync" mode="SYNC" />
