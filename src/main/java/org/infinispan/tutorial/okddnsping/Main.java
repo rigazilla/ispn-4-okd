@@ -17,7 +17,11 @@ public class Main {
 		String s = defaultCache.get("first");
 		System.out.println("got: "+s);
 		defaultCache.put("first","first");
-		System.out.println("put");		
+		System.out.println("put");
+		while (true) {
+		System.out.println(manager.getMembers().toString());
+		Thread.sleep(1000);
+		}
 	}
 
 }
