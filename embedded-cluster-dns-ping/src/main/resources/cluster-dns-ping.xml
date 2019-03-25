@@ -3,7 +3,7 @@
 		<stack name="dns-ping">
 			<TCP  bind_port="7600"/>
 			<dns.DNS_PING
-				dns_query="okddnsping-headless.default.svc.cluster.local" />
+				dns_query="okddnsping-headless.myproject.svc.cluster.local" />
 			<MERGE3 max_interval="30000" min_interval="10000" />
 			<FD_SOCK />
 			<FD_ALL />
