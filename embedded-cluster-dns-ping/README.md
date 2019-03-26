@@ -65,4 +65,5 @@ JGroups DNS_PING discovery protocol is used in this example to form the cluster 
 <dns.DNS_PING dns_query="okddnsping-headless.myproject.svc.cluster.local" />
 ```
 this line sais to JGroups to discover cluster members using DNS_PING whit the given DNS query. That query matches the DNS entry associated to the headless service exposed with the application and that entry contains all the pods deployed by the application.
-
+# Conclusion
+An easy way to deploy an application with an Infinispan cluster embedded has been shown, with some more info about DNS_PING. Thanks for readme.
