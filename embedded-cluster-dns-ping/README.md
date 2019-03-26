@@ -1,5 +1,5 @@
 # A S2I Java playground with Infinispan cluster
-This is a very simple example on how to run an Infinispan cluster over OKD using Infinispan Java libraries
+This is a very simple example on how to run an Infinispan cluster over OKD using Infinispan Java libraries. It's an S2I project so should be easy to play and experiment with it. Enjoy.
 ## Run
 Open a terminal and execute the following:
 ```
