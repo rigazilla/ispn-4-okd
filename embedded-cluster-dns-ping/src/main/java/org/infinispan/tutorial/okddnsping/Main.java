@@ -14,16 +14,10 @@ public class Main {
 	public static void main(String[] args) throws IOException, InterruptedException {
 		Configurator.setLevel(LogManager.getLogger("org.jgroups").getName(), Level.DEBUG);
 		System.setProperty("java.net.preferIPv4Stack", "true");
-		//GlobalConfigurationBuilder gcb = GlobalConfigurationBuilder.defaultClusteredBuilder();
 		DefaultCacheManager manager = new DefaultCacheManager("cluster-dns-ping.xml");
 		manager.start();		
-		Cache<String, String> defaultCache = manager.getCache();
-		String s = defaultCache.get("first");
-		System.out.println("got: "+s);
-		defaultCache.put("first","first");
-		System.out.println("put");
 		while (true) {
-		System.out.println(manager.getMembers().toString());
+		System.out.println("Cluster members list: "+manager.getMembers().toString());
 		Thread.sleep(1000);
 		}
 	}
