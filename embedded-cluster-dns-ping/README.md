@@ -59,4 +59,9 @@ Cluster members list: [ispn-4-okd-1-k5rgw-6237, ispn-4-okd-1-wqgrd-26675]
 Cluster members list: [ispn-4-okd-1-k5rgw-6237, ispn-4-okd-1-wqgrd-26675]
 ```
 # DNS_PING
-JGroups DNS_PING discovery protocol is used in this example to form the cluster ([JGroups docs](http://jgroups.org/manual4/index.html#_dns_ping)), this protocol queries the DNS service (OKD provides kube-dns) to retrieve the list of the cluster members. The configuration file for Jgroups is [here](https://github.com/rigazilla/ispn-4-okd/blob/master/embedded-cluster-dns-ping/src/main/resources/cluster-dns-ping.xml).
+JGroups DNS_PING discovery protocol is used in this example to form the cluster ([JGroups docs](http://jgroups.org/manual4/index.html#_dns_ping)), this protocol queries the DNS service (OKD provides kube-dns) to retrieve the list of the cluster members. The configuration file for Jgroups is [here](https://github.com/rigazilla/ispn-4-okd/blob/master/embedded-cluster-dns-ping/src/main/resources/cluster-dns-ping.xml) and the line related to DNS_PING is:
+```
+<dns.DNS_PING dns_query="okddnsping-headless.myproject.svc.cluster.local" />
+```
+this line sais to JGroups to discover cluster members using DNS_PING whit the given DNS query. That query matches the DNS entry associated to the headless service exposed with the application and that entry contains all the pods deployed by the application.
+
