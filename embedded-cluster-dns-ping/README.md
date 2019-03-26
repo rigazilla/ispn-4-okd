@@ -1,6 +1,6 @@
 # A S2I Java playground with Infinispan cluster
 This is a very simple example on how to run an Infinispan cluster over OKD using Infinispan Java libraries
-## Run it
+## Run
 Open a terminal and execute the following:
 ```
 $ oc cluster up                   # Start an OKD cluster (tested on v3.11)
@@ -58,3 +58,5 @@ Cluster members list: [ispn-4-okd-1-k5rgw-6237, ispn-4-okd-1-wqgrd-26675]
 Cluster members list: [ispn-4-okd-1-k5rgw-6237, ispn-4-okd-1-wqgrd-26675]
 Cluster members list: [ispn-4-okd-1-k5rgw-6237, ispn-4-okd-1-wqgrd-26675]
 ```
+# DNS_PING
+JGroups DNS_PING discovery protocol is used in this example to form the cluster ([JGroups docs](http://jgroups.org/manual4/index.html#_dns_ping)), this protocol queries the DNS service (OKD provides kube-dns) to retrieve the list of the cluster members. The configuration file for Jgroups is [here](https://github.com/rigazilla/ispn-4-okd/blob/master/embedded-cluster-dns-ping/src/main/resources/cluster-dns-ping.xml).
