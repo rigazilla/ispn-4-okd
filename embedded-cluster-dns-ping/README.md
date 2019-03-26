@@ -28,11 +28,11 @@ The project contains two pods: `ispn-4-okd-1-build` is the s2i builder and `ispn
 Check the pod logs to see what's going on:
 ```
 $ oc logs ispn-4-okd-1-bldfv | tail -5
-[ispn-4-okd-1-bldfv-61884]
-[ispn-4-okd-1-bldfv-61884]
-[ispn-4-okd-1-bldfv-61884]
+Cluster members list: [ispn-4-okd-1-bldfv-61884]
+Cluster members list: [ispn-4-okd-1-bldfv-61884]
+Cluster members list: [ispn-4-okd-1-bldfv-61884]
 10:20:22.705 [jgroups-17,mycluster,ispn-4-okd-1-bldfv-61884] DEBUG org.jgroups.protocols.dns.DNS_PING - ispn-4-okd-1-bldfv-61884: no entries collected from DNS (in 42 ms)
-[ispn-4-okd-1-bldfv-61884]
+Cluster members list: [ispn-4-okd-1-bldfv-61884]
 ```
 Everything works as design: the pod is just printing the Infinispan cluster components, see [Main.java](https://github.com/rigazilla/ispn-4-okd/blob/master/embedded-cluster-dns-ping/src/main/java/org/infinispan/tutorial/okddnsping/Main.java)
 ### Scaling the cluster
@@ -52,9 +52,9 @@ ispn-4-okd-1-wqgrd   1/1       Running     0          6s
 and if they are in cluster:
 ```
 $ oc logs ispn-4-okd-1-k5rgw | tail -5
-[ispn-4-okd-1-k5rgw-6237, ispn-4-okd-1-wqgrd-26675]
-[ispn-4-okd-1-k5rgw-6237, ispn-4-okd-1-wqgrd-26675]
-[ispn-4-okd-1-k5rgw-6237, ispn-4-okd-1-wqgrd-26675]
-[ispn-4-okd-1-k5rgw-6237, ispn-4-okd-1-wqgrd-26675]
-[ispn-4-okd-1-k5rgw-6237, ispn-4-okd-1-wqgrd-26675]
+Cluster members list: [ispn-4-okd-1-k5rgw-6237, ispn-4-okd-1-wqgrd-26675]
+Cluster members list: [ispn-4-okd-1-k5rgw-6237, ispn-4-okd-1-wqgrd-26675]
+Cluster members list: [ispn-4-okd-1-k5rgw-6237, ispn-4-okd-1-wqgrd-26675]
+Cluster members list: [ispn-4-okd-1-k5rgw-6237, ispn-4-okd-1-wqgrd-26675]
+Cluster members list: [ispn-4-okd-1-k5rgw-6237, ispn-4-okd-1-wqgrd-26675]
 ```
