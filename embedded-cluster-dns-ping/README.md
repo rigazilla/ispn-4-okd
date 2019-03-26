@@ -14,6 +14,7 @@ $ oc expose dc/ispn-4-okd \
     --name okddnsping-headless --cluster-ip=None
 ```
 Now the S2I system is building, deploying and running the application. This could take some time because of the downloading of the s2i builder image.
+The above `oc expose` command creates an headless service associated to the application. This service is associated with a DNS entry containing all the application's pods name that will be queried by the DNS_PING protocol ([kubernetes DNS docs](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#services).
 
 If everything went well, this should be the status:
 ```
